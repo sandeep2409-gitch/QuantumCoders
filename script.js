@@ -35,11 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (hamburger && mainNav) {
     hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
       mainNav.classList.toggle('active');
     });
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
         mainNav.classList.remove('active');
       });
     });
@@ -104,8 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const btnViewEventDetailsS1 = document.getElementById('btn-view-event-details-s1');
+
   if (btnViewEventDetails) {
     btnViewEventDetails.addEventListener('click', () => {
+      openModal('modal-event');
+    });
+  }
+
+  if (btnViewEventDetailsS1) {
+    btnViewEventDetailsS1.addEventListener('click', () => {
       openModal('modal-event');
     });
   }
@@ -116,6 +126,16 @@ document.addEventListener('DOMContentLoaded', () => {
       openModal('modal-event');
     });
   }
+
+  // Interactive CLI Filter Flags in Events Section
+  const cliFlags = document.querySelectorAll('.cli-flag');
+  cliFlags.forEach(flag => {
+    flag.addEventListener('click', () => {
+      cliFlags.forEach(f => f.classList.remove('active'));
+      flag.classList.add('active');
+      showToast(`Filter applied: ${flag.textContent.trim()}`);
+    });
+  });
 
   // ------------------------------------------------------------------------
   // 4. Gallery Lightbox Handler
@@ -307,6 +327,103 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------------------------------------------------------
+  // Coding Theme - Circuit Particle Matrix Canvas
+  // ------------------------------------------------------------------------
+  const codingCanvas = document.getElementById('team-coding-canvas');
+  if (codingCanvas) {
+    const ctx = codingCanvas.getContext('2d');
+    let width = codingCanvas.width = codingCanvas.offsetWidth;
+    let height = codingCanvas.height = codingCanvas.offsetHeight;
+
+    window.addEventListener('resize', () => {
+      if (codingCanvas) {
+        width = codingCanvas.width = codingCanvas.offsetWidth;
+        height = codingCanvas.height = codingCanvas.offsetHeight;
+      }
+    });
+
+    const particles = [];
+    const count = Math.min(Math.floor((width * height) / 25000), 45);
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        radius: Math.random() * 1.8 + 1,
+        color: Math.random() > 0.4 ? 'rgba(56, 189, 248, ' : 'rgba(139, 92, 246, '
+      });
+    }
+
+    let mouseX = -1000;
+    let mouseY = -1000;
+    const teamSection = document.getElementById('team');
+    if (teamSection) {
+      teamSection.addEventListener('mousemove', (e) => {
+        const rect = codingCanvas.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+      });
+      teamSection.addEventListener('mouseleave', () => {
+        mouseX = -1000;
+        mouseY = -1000;
+      });
+    }
+
+    function renderCircuit() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Update and draw particles
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        // Subtle mouse interaction
+        const dx = mouseX - p.x;
+        const dy = mouseY - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          p.x -= (dx / dist) * 0.8;
+          p.y -= (dy / dist) * 0.8;
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + '0.75)';
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = p.color + '0.8)';
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Connect nearby nodes with circuit lines
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const distNodes = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (distNodes < 110) {
+            const alpha = (1 - distNodes / 110) * 0.25;
+            ctx.strokeStyle = p.color + alpha + ')';
+            ctx.lineWidth = 0.85;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(renderCircuit);
+    }
+    requestAnimationFrame(renderCircuit);
+  }
+
+  // ------------------------------------------------------------------------
   // 6. Contact Form & GET IN TOUCH Modal
   // ------------------------------------------------------------------------
   const btnGetInTouch = document.getElementById('btn-get-in-touch');
@@ -439,6 +556,53 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       toast.remove();
     }, 3000);
+  }
+
+  // ------------------------------------------------------------------------
+  // 9. Hero Section Typewriter Animation
+  // ------------------------------------------------------------------------
+  const line1El = document.getElementById('type-line-1');
+  const line2El = document.getElementById('type-line-2');
+  const line3El = document.getElementById('type-line-3');
+  const cursorEl = document.getElementById('typewriter-cursor');
+
+  if (line1El && line2El && line3El && cursorEl) {
+    const lines = [
+      { el: line1El, text: 'Welcome to ,' },
+      { el: line2El, text: 'The' },
+      { el: line3El, text: '<Quantum Coders />' }
+    ];
+
+    let currentLine = 0;
+    let currentChar = 0;
+    const typeSpeed = 55; // ms per character
+    const linePause = 240; // ms pause between lines
+
+    function typeWriterStep() {
+      if (currentLine < lines.length) {
+        const line = lines[currentLine];
+        if (currentChar < line.text.length) {
+          line.el.textContent += line.text.charAt(currentChar);
+          currentChar++;
+          line.el.after(cursorEl);
+          setTimeout(typeWriterStep, typeSpeed + Math.random() * 20);
+        } else {
+          currentLine++;
+          currentChar = 0;
+          setTimeout(typeWriterStep, linePause);
+        }
+      } else {
+        // Finished typing all lines: cursor stays at the end of line 3
+        line3El.after(cursorEl);
+      }
+    }
+
+    // Clear initial content and start typing after slight initial delay
+    line1El.textContent = '';
+    line2El.textContent = '';
+    line3El.textContent = '';
+    line1El.after(cursorEl);
+    setTimeout(typeWriterStep, 300);
   }
 
 });

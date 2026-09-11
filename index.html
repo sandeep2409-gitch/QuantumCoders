@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
@@ -19,34 +19,33 @@
   <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 
-<body>
+<body class="coding-theme">
 
-  <!-- Top Info Bar -->
-  <div class="top-bar">
-    <div class="container top-bar-content">
-      <span class="top-bar-title">Quantum Coders |The club of Pydah Group</span>
-      <span class="top-bar-date" id="live-timestamp">11/09/26, 10:49 AM</span>
-    </div>
-  </div>
+  <!-- Top Info Bar (Terminal Status Bar) -->
 
-  <!-- Navigation Header -->
+
+  <!-- Navigation Header (Glassmorphic IDE Nav) -->
   <header class="site-header" id="site-header">
     <div class="container header-container">
       <a href="#home" class="brand-logo" aria-label="Quantum Coders Home">
-        <img src="assets/logo.png" alt="Quantum Coders" class="logo-image">
+        <div class="logo-glow-wrapper">
+          <img src="assets/logo.png" alt="Quantum Coders" class="logo-image">
+        </div>
       </a>
 
       <!-- Desktop Nav -->
       <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
         <ul class="nav-list">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About us</a></li>
-          <li><a href="#create-id" class="nav-link" id="nav-create-id">Create ID</a></li>
-          <li><a href="#events" class="nav-link">Event</a></li>
-          <li><a href="#gallery" class="nav-link">Gallery</a></li>
-          <li><a href="#downloads" class="nav-link" id="nav-downloads">Downloads</a></li>
-          <li><a href="#team" class="nav-link">Team</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#home" class="nav-link active"><span class="nav-idx"></span>Home</a></li>
+          <li><a href="#about" class="nav-link"><span class="nav-idx"></span>About</a></li>
+          <li><a href="#create-id" class="nav-link" id="nav-create-id"><span class="nav-idx"></span>Create ID</a>
+          </li>
+          <li><a href="#events" class="nav-link"><span class="nav-idx"></span>Events</a></li>
+          <li><a href="#gallery" class="nav-link"><span class="nav-idx"></span>Gallery</a></li>
+          <li><a href="#downloads" class="nav-link" id="nav-downloads"><span class="nav-idx"></span>Downloads</a>
+          </li>
+          <li><a href="#team" class="nav-link"><span class="nav-idx"></span>Team</a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-idx"></span>Contact</a></li>
         </ul>
       </nav>
 
@@ -61,159 +60,335 @@
 
   <!-- HERO SECTION -->
   <section class="hero-section" id="home">
-    <div class="hero-bg-graphic">
-      <!-- Ribbon curve vector graphic matching page 1 mockup -->
-      <svg class="ribbon-svg" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ribbon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.85" />
-            <stop offset="50%" stop-color="#0284C7" stop-opacity="0.75" />
-            <stop offset="100%" stop-color="#64748B" stop-opacity="0.6" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M 150 350 C 50 150, 450 50, 650 250 C 850 450, 650 650, 350 650 C 150 650, 100 450, 250 300 C 400 150, 800 250, 950 550 C 970 600, 960 700, 920 750"
-          stroke="url(#ribbon-grad)" stroke-width="110" stroke-linecap="round" fill="none" />
-      </svg>
+    <!-- Scrolling Pixel Art Background: TEAM QC -->
+    <div class="hero-pixel-bg" aria-hidden="true">
+      <div class="pixel-crt-scanlines"></div>
+
+      <!-- Upper Pixel Art Track -->
+      <div class="pixel-track track-top">
+        <div class="pixel-scroller scroll-left">
+          <span>TEAM QC</span><span class="px-bullet">👾</span>
+          <span>TEAM QC</span><span class="px-bullet">⚡</span>
+          <span>TEAM QC</span><span class="px-bullet">★</span>
+          <span>TEAM QC</span><span class="px-bullet">🕹️</span>
+          <span>TEAM QC</span><span class="px-bullet">👾</span>
+          <span>TEAM QC</span><span class="px-bullet">⚡</span>
+          <span>TEAM QC</span><span class="px-bullet">★</span>
+          <span>TEAM QC</span><span class="px-bullet">🕹️</span>
+          <span>TEAM QC</span><span class="px-bullet">👾</span>
+          <span>TEAM QC</span><span class="px-bullet">⚡</span>
+          <span>TEAM QC</span><span class="px-bullet">★</span>
+          <span>TEAM QC</span><span class="px-bullet">🕹️</span>
+        </div>
+        <div class="pixel-scroller scroll-left" aria-hidden="true">
+          <span>TEAM QC</span><span class="px-bullet">👾</span>
+          <span>TEAM QC</span><span class="px-bullet">⚡</span>
+          <span>TEAM QC</span><span class="px-bullet">★</span>
+          <span>TEAM QC</span><span class="px-bullet">🕹️</span>
+          <span>TEAM QC</span><span class="px-bullet">👾</span>
+          <span>TEAM QC</span><span class="px-bullet">⚡</span>
+          <span>TEAM QC</span><span class="px-bullet">★</span>
+          <span>TEAM QC</span><span class="px-bullet">🕹️</span>
+          <span>TEAM QC</span><span class="px-bullet">👾</span>
+          <span>TEAM QC</span><span class="px-bullet">⚡</span>
+          <span>TEAM QC</span><span class="px-bullet">★</span>
+          <span>TEAM QC</span><span class="px-bullet">🕹️</span>
+        </div>
+      </div>
+
+      <!-- Giant Center Diagonal Pixel Art Watermark -->
+      <div class="pixel-track track-middle">
+        <div class="pixel-scroller scroll-right">
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+        </div>
+        <div class="pixel-scroller scroll-right" aria-hidden="true">
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+          <span class="giant-px">TEAM QC</span><span class="px-accent">◆</span>
+        </div>
+      </div>
+
+      <!-- Lower Pixel Art Track -->
+      <div class="pixel-track track-bottom">
+        <div class="pixel-scroller scroll-left-slow">
+          <span>TEAM QC</span><span class="px-code">&lt;/&gt;</span>
+          <span>TEAM QC</span><span class="px-code">[0x7F]</span>
+          <span>TEAM QC</span><span class="px-code">&lt;/&gt;</span>
+          <span>TEAM QC</span><span class="px-code">[0x7F]</span>
+          <span>TEAM QC</span><span class="px-code">&lt;/&gt;</span>
+          <span>TEAM QC</span><span class="px-code">[0x7F]</span>
+          <span>TEAM QC</span><span class="px-code">&lt;/&gt;</span>
+          <span>TEAM QC</span><span class="px-code">[0x7F]</span>
+          <span>TEAM QC</span><span class="px-code">&lt;/&gt;</span>
+          <span>TEAM QC</span><span class="px-code">[0x7F]</span>
+        </div>
+        <div class="pixel-scroller scroll-left-slow" aria-hidden="true">
+          <span>TEAM QC</span><span class="px-code">&lt;/&gt;</span>
+          <span>TEAM QC</span><span class="px-code">[0x7F]</span>
+          <span>TEAM QC</span><span class="px-code">&lt;/&gt;</span>
+          <span>TEAM QC</span><span class="px-code">[0x7F]</span>
+          <span>TEAM QC</span><span class="px-code">&lt;/&gt;</span>
+          <span>TEAM QC</span><span class="px-code">[0x7F]</span>
+          <span>TEAM QC</span><span class="px-code">&lt;/&gt;</span>
+          <span>TEAM QC</span><span class="px-code">[0x7F]</span>
+          <span>TEAM QC</span><span class="px-code">&lt;/&gt;</span>
+          <span>TEAM QC</span><span class="px-code">[0x7F]</span>
+        </div>
+      </div>
     </div>
+
+
 
     <div class="container hero-container">
       <div class="hero-content">
-        <h1 class="hero-title">
-          Welcome to ,<br>
-          The <br>
-          Quantum Coders
+        <div class="hero-code-badge">
+          <span class="code-bracket">&lt;</span><span class="code-tag">DeveloperCommunity</span> <span
+            class="code-attr">mode</span>=<span class="code-val">"quantum"</span> <span
+            class="code-bracket">/&gt;</span>
+        </div>
+        <h1 class="hero-title" id="hero-typewriter">
+          <span class="type-line" id="type-line-1"></span><br>
+          <span class="type-line" id="type-line-2"></span><br>
+          <span class="type-line hero-title-highlight" id="type-line-3"></span><span class="typewriter-cursor"
+            id="typewriter-cursor">_</span>
         </h1>
         <div class="hero-cta-wrapper">
-          <a href="#about" class="btn btn-primary" id="btn-learn-more">LEARN MORE</a>
+          <a href="#about" class="btn btn-primary btn-code-cta" id="btn-learn-more">
+            <span class="terminal-symbol">$</span> ./explore-qc --run <span class="btn-arrow">&rarr;</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT SECTION (IDE CODE EDITOR THEME) -->
   <section class="about-section" id="about">
     <div class="container about-container">
-      <h2 class="section-title">About Quantum Coders</h2>
+      <div class="section-tag-badge">
+        <span class="syntax-comment">// 02. ABOUT_US.md</span>
+      </div>
+      <h2 class="section-title">&lt;About Quantum Coders /&gt;</h2>
 
-      <div class="about-grid">
-        <div class="about-image-card">
-          <img src="assets/college.png" alt="Pydah College of Engineering" class="about-img" loading="lazy">
+      <!-- IDE Editor Frame -->
+      <div class="ide-window-frame">
+        <div class="ide-titlebar">
+          <div class="ide-dots">
+            <span class="ide-dot dot-red"></span>
+            <span class="ide-dot dot-yellow"></span>
+            <span class="ide-dot dot-green"></span>
+          </div>
+          <div class="ide-tabs">
+            <div class="ide-tab active">
+              <span class="tab-icon">📄</span>
+              <span class="tab-title">AboutQuantumCoders.ts</span>
+            </div>
+            <div class="ide-tab">
+              <span class="tab-icon">⚙️</span>
+              <span class="tab-title">config.json</span>
+            </div>
+          </div>
+          <div class="ide-status-bar-mini">
+            <span>UTF-8</span>
+            <span>TypeScript</span>
+          </div>
         </div>
-        <div class="about-text-content">
-          <p class="about-text">
-            The <strong>Quantum</strong> <strong>Coders</strong> Club(QC) is an Student club in
-            <em>Pydah collge of Engineering (Autonomous)</em> is an active organization aiming to foster a culture
-            of innovation within our institution. TEAM QC provides platforms for creative students to learn,
-            collaborate,
-            and transform their innovative ideas into prototypes of viable products and services.
-          </p>
-          <p class="about-text">
-            We promote <strong>technology-based startup</strong> ventures among college students and provide them with
-            the necessary resources and support. We organize various workshops, webinars, Entalks, and competitions to
-            help develop innovative ideas into successful entrepreneurial ventures.
-          </p>
-          <p class="about-quote">
-            Transforming ideas into innovation,<br>
-            and innovation into success.
-          </p>
+
+        <div class="ide-body">
+          <div class="about-grid">
+            <div class="about-image-card hud-frame">
+              <div class="hud-corner top-left"></div>
+              <div class="hud-corner top-right"></div>
+              <div class="hud-corner bottom-left"></div>
+              <div class="hud-corner bottom-right"></div>
+              <img src="assets/college.png" alt="Pydah College of Engineering" class="about-img" loading="lazy">
+              <div class="hud-telemetry">
+                <span class="hud-tag"><span class="hud-led"></span>PYDAH_CAMPUS_AUTONOMOUS</span>
+                <span class="hud-tag">LOC: 17.0005° N</span>
+              </div>
+            </div>
+
+            <div class="about-text-content">
+              <div class="code-comment-line">
+                <span class="syntax-keyword">const</span> <span class="syntax-var">clubMission</span> = {
+              </div>
+              <p class="about-text">
+                <span class="code-line-bullet">// Overview:</span><br>
+                The <strong>Quantum Coders</strong> Club (QC) at <em>Pydah College of Engineering (Autonomous)</em>
+                is an active ecosystem empowering students with high-impact software engineering skills, collaborative
+                coding platforms, and startup incubation.
+              </p>
+              <p class="about-text">
+                <span class="code-line-bullet">// Startup Incubation & Tech Acceleration:</span><br>
+                We foster technology-based ventures, hackathons, and real-world product engineering, providing students
+                with computing infrastructure, mentorship, and industry-ready development pipelines.
+              </p>
+              <div class="about-quote code-quote-box">
+                <span class="quote-prefix">return `</span>
+                <span class="quote-text">Transforming ideas into innovation, and innovation into success.</span>
+                <span class="quote-prefix">`;</span>
+              </div>
+              <div class="code-comment-end">};</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RECENT EVENTS SECTION -->
+  <!-- RECENT EVENTS SECTION (RUNTIME EXECUTION THEME) -->
   <section class="events-section" id="events">
     <div class="container events-container">
-      <h2 class="section-title">Recent Events</h2>
+      <div class="section-tag-badge">
+        <span class="syntax-comment">// 03. RUNTIME_EVENTS.sh</span>
+      </div>
+      <h2 class="section-title">&lt;Recent Events /&gt;</h2>
+
+      <!-- CLI Flag Filter Bar -->
+      <div class="events-cli-bar">
+        <span class="cli-prompt">$ filter --tag</span>
+        <button class="cli-flag active">[--all-events]</button>
+        <button class="cli-flag">[--hackathons]</button>
+        <button class="cli-flag">[--bootcamps]</button>
+        <button class="cli-flag">[--archive]</button>
+      </div>
 
       <div class="events-grid">
-        <!-- Event Details Card -->
-        <div class="event-details-card">
-          <h3 class="event-title">Codestrom Season 2</h3>
-          <p class="event-subtitle">We Hear the Josh !!! </p>
-
-          <p class="event-description">
-            Since many students couldn’t register for the first selection, TEAM QC is conducting another selection
-            process
-            for those who missed the opportunity.
-          </p>
-
-          <p class="event-alert">
-            ⚡ Limited Registrations!<br>
-            If you missed the first selection, this is your chance!
-          </p>
-
-          <p class="event-tagline">
-            Bring your ideas, passion, and energy. Let’s build something amazing together! 🚀
-          </p>
-
-          <ul class="event-meta-list">
-            <li><strong>Date:</strong> 5 May 2026 [Two day hackathon ]</li>
-            <li><strong>Time:</strong> 9:30 AM – 3:30 PM</li>
-            <li><strong>Venue:</strong> 3rd floor LABs</li>
-
-          </ul>
-
-          <div class="event-status-badge">
-            Online Registration Closed
+        <!-- Event Details Card 1 -->
+        <div class="event-details-card terminal-card">
+          <div class="terminal-card-header">
+            <div class="terminal-dots">
+              <span class="term-dot dot-red"></span>
+              <span class="term-dot dot-yellow"></span>
+              <span class="term-dot dot-green"></span>
+            </div>
+            <span class="terminal-card-name">codestorm_s02.sh</span>
+            <span class="terminal-status-pill status-closed">STATUS: EXECUTED</span>
           </div>
 
-          <div class="event-actions">
-            <button class="btn btn-outline" id="btn-view-event-details">View Details</button>
+          <div class="terminal-card-body">
+            <h3 class="event-title">Codestorm Season 2</h3>
+            <p class="event-subtitle">
+              <span class="terminal-log-prefix">&gt;</span> We Hear the Josh !!!
+            </p>
 
-          </div>
-        </div>
-        <div class="event-details-card">
-          <h3 class="event-title">Codestrom Season 1</h3>
-          <p class="event-subtitle">Are you Ready !!! </p>
+            <p class="event-description">
+              TEAM QC conducted an intensive multi-round engineering selection process for emerging student developers
+              to build production-grade prototypes.
+            </p>
 
-          <p class="event-description">
-            Since many students couldn’t register for the first selection, TEAM QC is conducting another selection
-            process
-            for those who missed the opportunity.
-          </p>
+            <div class="event-alert code-alert-box">
+              <span class="alert-symbol">⚡</span>
+              <span><strong>PROCESS_LIMIT:</strong> Restricted slots. High-intensity competitive coding sprint!</span>
+            </div>
 
-          <p class="event-alert">
-            ⚡ Limited Registrations!<br>
-          </p>
+            <p class="event-tagline">
+              <span class="syntax-comment">// Output:</span> Bring your ideas, passion, and energy. Let’s build
+              something amazing together! 🚀
+            </p>
 
-          <p class="event-tagline">
-            Bring your ideas, passion, and energy. Let’s build something amazing together! 🚀
-          </p>
+            <ul class="event-meta-list code-meta-list">
+              <li><span class="meta-label">DATE:</span> <span class="meta-val">5 May 2026 [2-Day Hackathon]</span></li>
+              <li><span class="meta-label">TIME:</span> <span class="meta-val">09:30 - 15:30 IST</span></li>
+              <li><span class="meta-label">HOST:</span> <span class="meta-val">3rd Floor Innovation LABs</span></li>
+            </ul>
 
-          <ul class="event-meta-list">
-            <li><strong>Date:</strong> 4 January 2026</li>
-            <li><strong>Time:</strong> 9:30 AM – 3:30 PM</li>
-            <li><strong>Venue:</strong> Pydah college of engineering </li>
-            <li><strong>Max Persons:</strong> 120</li>
-          </ul>
+            <div class="event-tech-tags">
+              <span class="tech-tag">&lt;Hackathon /&gt;</span>
+              <span class="tech-tag">&lt;CompetitiveCoding /&gt;</span>
+              <span class="tech-tag">&lt;Pydah /&gt;</span>
+            </div>
 
-          <div class="event-status-badge">
-            Online Registration Closed
-          </div>
-
-          <div class="event-actions">
-            <button class="btn btn-outline" id="btn-view-event-details">View Details</button>
+            <div class="event-actions">
+              <button class="btn btn-outline btn-terminal" id="btn-view-event-details">
+                <span class="btn-prompt">&gt;</span> cat details.log
+              </button>
+            </div>
           </div>
         </div>
-        <!-- Event Poster Display -->
+
+        <!-- Event Details Card 2 -->
+        <div class="event-details-card terminal-card">
+          <div class="terminal-card-header">
+            <div class="terminal-dots">
+              <span class="term-dot dot-red"></span>
+              <span class="term-dot dot-yellow"></span>
+              <span class="term-dot dot-green"></span>
+            </div>
+            <span class="terminal-card-name">codestorm_s01.sh</span>
+            <span class="terminal-status-pill status-closed">STATUS: EXECUTED</span>
+          </div>
+
+          <div class="terminal-card-body">
+            <h3 class="event-title">Codestorm Season 1</h3>
+            <p class="event-subtitle">
+              <span class="terminal-log-prefix">&gt;</span> Are You Ready !!!
+            </p>
+
+            <p class="event-description">
+              The foundational hackathon event that initiated the Quantum Coders flagship technical community inside
+              Pydah Group.
+            </p>
+
+            <div class="event-alert code-alert-box">
+              <span class="alert-symbol">⚡</span>
+              <span><strong>METRIC:</strong> 120+ active competitors deployed across multiple code domains.</span>
+            </div>
+
+            <p class="event-tagline">
+              <span class="syntax-comment">// Output:</span> Hands-on competitive algorithm challenge and rapid
+              innovation showcase.
+            </p>
+
+            <ul class="event-meta-list code-meta-list">
+              <li><span class="meta-label">DATE:</span> <span class="meta-val">4 January 2026</span></li>
+              <li><span class="meta-label">TIME:</span> <span class="meta-val">09:30 - 15:30 IST</span></li>
+              <li><span class="meta-label">HOST:</span> <span class="meta-val">Pydah College of Engineering</span></li>
+              <li><span class="meta-label">NODES:</span> <span class="meta-val">120 Participants</span></li>
+            </ul>
+
+            <div class="event-tech-tags">
+              <span class="tech-tag">&lt;Algorithms /&gt;</span>
+              <span class="tech-tag">&lt;Season1 /&gt;</span>
+              <span class="tech-tag">&lt;QC_Legacy /&gt;</span>
+            </div>
+
+            <div class="event-actions">
+              <button class="btn btn-outline btn-terminal" id="btn-view-event-details-s1">
+                <span class="btn-prompt">&gt;</span> cat details.log
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW WE SUPPORT YOU SECTION -->
+  <!-- HOW WE SUPPORT YOU SECTION (SYSTEM ARCHITECTURE / MICROSERVICES) -->
   <section class="support-section">
     <div class="container support-container">
-      <h2 class="section-title text-center">How We Support You</h2>
+      <div class="section-tag-badge text-center">
+        <span class="syntax-comment">// 04. INFRASTRUCTURE &amp; SERVICES</span>
+      </div>
+      <h2 class="section-title text-center">&lt;How We Support You /&gt;</h2>
       <p class="section-subtitle text-center">
-        Empowering students to transform ideas into impact through hands-on programs and support.
+        Empowering students with hands-on dev infrastructure, real-world sandboxes, and tech mentorship.
       </p>
 
       <div class="support-cards-grid">
-        <!-- Card 1 -->
-        <div class="support-card">
+        <!-- Node 1 -->
+        <div class="support-card node-card">
+          <div class="node-status-bar">
+            <span class="node-id">NODE_01</span>
+            <span class="node-ping"><span class="ping-dot"></span>12ms</span>
+          </div>
           <div class="support-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
@@ -225,11 +400,15 @@
             </svg>
           </div>
           <h3 class="support-card-title">Innovation Challenges</h3>
-          <p class="support-card-text">Compete to solve real-world problems with innovative solutions.</p>
+          <p class="support-card-text">Compete to solve real-world problems with algorithmic and software solutions.</p>
         </div>
 
-        <!-- Card 2 -->
-        <div class="support-card">
+        <!-- Node 2 -->
+        <div class="support-card node-card">
+          <div class="node-status-bar">
+            <span class="node-id">NODE_02</span>
+            <span class="node-ping"><span class="ping-dot"></span>9ms</span>
+          </div>
           <div class="support-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
@@ -240,12 +419,17 @@
               <line x1="13" y1="14" x2="17" y2="14"></line>
             </svg>
           </div>
-          <h3 class="support-card-title">Workshops & Hackathons</h3>
-          <p class="support-card-text">Engaging, hands-on experiences to learn and build fast.</p>
+          <h3 class="support-card-title">Workshops &amp; Hackathons</h3>
+          <p class="support-card-text">Hands-on coding sprints, system design labs, and real-time prototype building.
+          </p>
         </div>
 
-        <!-- Card 3 -->
-        <div class="support-card">
+        <!-- Node 3 -->
+        <div class="support-card node-card">
+          <div class="node-status-bar">
+            <span class="node-id">NODE_03</span>
+            <span class="node-ping"><span class="ping-dot"></span>15ms</span>
+          </div>
           <div class="support-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
@@ -256,11 +440,15 @@
             </svg>
           </div>
           <h3 class="support-card-title">Mentoring Sessions</h3>
-          <p class="support-card-text">Expert guidance from industry professionals and entrepreneurs.</p>
+          <p class="support-card-text">Direct code reviews and career guidance from senior engineers and alumni.</p>
         </div>
 
-        <!-- Card 4 -->
-        <div class="support-card">
+        <!-- Node 4 -->
+        <div class="support-card node-card">
+          <div class="node-status-bar">
+            <span class="node-id">NODE_04</span>
+            <span class="node-ping"><span class="ping-dot"></span>11ms</span>
+          </div>
           <div class="support-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
@@ -272,11 +460,15 @@
             </svg>
           </div>
           <h3 class="support-card-title">Startup Bootcamp</h3>
-          <p class="support-card-text">Accelerated programs to turn ideas into viable startups.</p>
+          <p class="support-card-text">Architectural blueprints and product launch support for student founders.</p>
         </div>
 
-        <!-- Card 5 -->
-        <div class="support-card">
+        <!-- Node 5 -->
+        <div class="support-card node-card">
+          <div class="node-status-bar">
+            <span class="node-id">NODE_05</span>
+            <span class="node-ping"><span class="ping-dot"></span>18ms</span>
+          </div>
           <div class="support-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
@@ -287,11 +479,15 @@
             </svg>
           </div>
           <h3 class="support-card-title">Pre-Incubation Support</h3>
-          <p class="support-card-text">Get early-stage help in building your startup foundation.</p>
+          <p class="support-card-text">Early-stage compute, API credits, and prototype testing environments.</p>
         </div>
 
-        <!-- Card 6 -->
-        <div class="support-card">
+        <!-- Node 6 -->
+        <div class="support-card node-card">
+          <div class="node-status-bar">
+            <span class="node-id">NODE_06</span>
+            <span class="node-ping"><span class="ping-dot"></span>8ms</span>
+          </div>
           <div class="support-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
@@ -300,61 +496,123 @@
               </path>
             </svg>
           </div>
-          <h3 class="support-card-title">Access to Maker Space / FabLab</h3>
-          <p class="support-card-text">Utilize modern tools and prototyping equipment for your projects.</p>
+          <h3 class="support-card-title">Maker Space &amp; Hardware Labs</h3>
+          <p class="support-card-text">Access to IoT dev-boards, microcontrollers, and modern testing equipment.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY SECTION -->
+  <!-- GALLERY SECTION (REPOSITORY ASSETS) -->
   <section class="gallery-section" id="gallery">
     <div class="container gallery-container">
-      <h2 class="gallery-header-title">GALLERY</h2>
+      <div class="section-tag-badge">
+        <span class="syntax-comment">// 05. REPOSITORY_ASSETS</span>
+      </div>
+      <h2 class="gallery-header-title">&lt;GALLERY_ARCHIVE /&gt;</h2>
 
       <div class="gallery-grid">
         <!-- Collection 1 -->
-        <div class="gallery-card" data-collection="budding">
+        <div class="gallery-card hud-gallery-card" data-collection="budding">
+          <div class="hud-corner top-left"></div>
+          <div class="hud-corner bottom-right"></div>
           <div class="gallery-card-content">
-            <h3 class="gallery-card-title">CODESTROM SEASON 1</h3>
-            <span class="gallery-count">Total images:4</span>
+            <div class="gallery-badge-code">[TAG: #HACK_01]</div>
+            <h3 class="gallery-card-title">CODESTORM SEASON 1</h3>
+            <span class="gallery-count"><span class="count-bullet">&bull;</span> Total images: 4</span>
           </div>
         </div>
 
         <!-- Collection 2 -->
-        <div class="gallery-card" data-collection="building">
+        <div class="gallery-card hud-gallery-card" data-collection="building">
+          <div class="hud-corner top-left"></div>
+          <div class="hud-corner bottom-right"></div>
           <div class="gallery-card-content">
-            <h3 class="gallery-card-title">CODESTROM SEASON @</h3>
-            <span class="gallery-count">Total images: 4</span>
+            <div class="gallery-badge-code">[TAG: #HACK_02]</div>
+            <h3 class="gallery-card-title">CODESTORM SEASON 2</h3>
+            <span class="gallery-count"><span class="count-bullet">&bull;</span> Total images: 4</span>
           </div>
         </div>
 
         <!-- Collection 3 (Featured with Photo) -->
-        <div class="gallery-card featured-gallery-card" data-collection="empowering">
+        <div class="gallery-card featured-gallery-card hud-gallery-card" data-collection="empowering">
+          <div class="hud-corner top-left"></div>
+          <div class="hud-corner bottom-right"></div>
           <div class="gallery-card-image-wrap">
             <img src="assets/startup.jpg" alt="Empowering Startup Team" class="gallery-thumbnail">
           </div>
           <div class="gallery-card-content">
-            <h3 class="gallery-card-title">CODEWAVE</h3>
-            <span class="gallery-count">Total images: 10</span>
+            <div class="gallery-badge-code">[TAG: #CODEWAVE_AI]</div>
+            <h3 class="gallery-card-title">CODEWAVE INAUGURATION</h3>
+            <span class="gallery-count"><span class="count-bullet">&bull;</span> Total images: 10</span>
           </div>
         </div>
       </div>
 
       <div class="gallery-actions">
-        <button class="btn btn-navy-pill" id="btn-view-all-gallery">View All Collections &rarr;</button>
+        <button class="btn btn-navy-pill btn-cyber-pill" id="btn-view-all-gallery">
+          <span class="btn-prompt">&gt;</span> fetchAllMedia() &rarr;
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- MEET THE TEAM SECTION -->
   <!-- MEET THE TEAM SECTION (POKÉMON CARDS THEME) -->
   <section class="team-section" id="team">
+    <!-- Coding Theme Ambient Background -->
+    <div class="team-code-bg">
+      <div class="code-grid-overlay"></div>
+      <div class="code-scanline"></div>
+      <canvas id="team-coding-canvas" class="team-coding-canvas"></canvas>
+
+      <!-- Ambient Code Watermarks -->
+      <div class="code-watermark code-watermark-left" aria-hidden="true">
+        <div class="code-editor-header">
+          <span class="editor-dot dot-red"></span>
+          <span class="editor-dot dot-yellow"></span>
+          <span class="editor-dot dot-green"></span>
+          <span class="editor-filename">TeamQuantum.ts</span>
+        </div>
+        <pre class="code-editor-body"><code><span class="c-kw">const</span> <span class="c-var">roster</span> = <span class="c-kw">new</span> <span class="c-class">TeamQC</span>({
+  <span class="c-prop">mode</span>: <span class="c-str">"LEADERSHIP"</span>,
+  <span class="c-prop">coreCount</span>: <span class="c-num">7</span>,
+  <span class="c-prop">holoTheme</span>: <span class="c-kw">true</span>
+});
+<span class="c-comm">// execute innovation loop</span>
+<span class="c-kw">while</span> (roster.<span class="c-func">isOnline</span>()) {
+  <span class="c-kw">await</span> roster.<span class="c-func">inspireCoders</span>();
+}</code></pre>
+      </div>
+
+      <div class="code-watermark code-watermark-right" aria-hidden="true">
+        <div class="code-editor-header">
+          <span class="editor-dot dot-red"></span>
+          <span class="editor-dot dot-yellow"></span>
+          <span class="editor-dot dot-green"></span>
+          <span class="editor-filename">terminal.sh</span>
+        </div>
+        <pre class="code-editor-body"><code><span class="c-cmd">$</span> git checkout -b feat/team-roster
+<span class="c-cmd">$</span> pnpm build --target=production
+<span class="c-success">[OK]</span> 7 Collectible Cards Compiled
+<span class="c-success">[OK]</span> 3D Tilt &amp; Hologram Active
+<span class="c-cmd">$</span> ./launch_quantum.sh
+<span class="c-cyan">&gt;&gt; STATUS: 200 RUNNING</span>
+<span class="c-cyan">&gt;&gt; HOST: quantumcoders.club</span></code></pre>
+      </div>
+
+      <!-- Floating Code Tags -->
+      <div class="floating-code-tag f-tag-1">&lt;QuantumCoders /&gt;</div>
+      <div class="floating-code-tag f-tag-2">01010001 01000011</div>
+      <div class="floating-code-tag f-tag-3">{ status: 200 }</div>
+      <div class="floating-code-tag f-tag-4">git push origin main</div>
+    </div>
+
     <div class="container team-container">
       <div class="team-header-wrapper text-center">
         <!-- React Bits CircularText Component -->
         <div class="circular-text-container" aria-label="TEAM QC Circular Text Badge">
-          <div class="circular-text" data-text="TEAM QC • TEAM QC • TEAM QC • " data-speed="20" data-hover="speedUp"></div>
+          <div class="circular-text" data-text="TEAM QC • TEAM QC • TEAM QC • " data-speed="20" data-hover="speedUp">
+          </div>
           <div class="circular-text-center-icon">
             <img src="assets/logo.png" alt="TEAM QC" class="circular-center-logo">
           </div>
@@ -362,20 +620,21 @@
         <span class="badge-accent">COLLECTIBLE ROSTER</span>
         <h2 class="section-title">Meet The Team</h2>
         <p class="section-subtitle">
-          The visionary leaders driving innovation, software development, and technological excellence at Quantum Coders.
+          The visionary leaders driving innovation, software development, and technological excellence at Quantum
+          Coders.
         </p>
       </div>
 
       <!-- Pokémon Interactive Card Showcase Deck -->
       <div class="pokemon-deck-wrapper">
         <div class="pokemon-deck" id="pokemon-deck">
-          
+
           <!-- 1. Media PR (Karthik Chada) -->
           <div class="pokemon-card theme-indigo" data-index="0" data-card="karthik-chada">
             <div class="pokemon-card-inner">
               <div class="pokemon-holo-layer"></div>
               <div class="pokemon-glare-layer"></div>
-              
+
               <div class="pokemon-card-header">
                 <div class="pokemon-header-info">
                   <h3 class="pokemon-member-name">Karthik</h3>
@@ -421,7 +680,7 @@
             <div class="pokemon-card-inner">
               <div class="pokemon-holo-layer"></div>
               <div class="pokemon-glare-layer"></div>
-              
+
               <div class="pokemon-card-header">
                 <div class="pokemon-header-info">
                   <h3 class="pokemon-member-name">Teja Jetti</h3>
@@ -467,7 +726,7 @@
             <div class="pokemon-card-inner">
               <div class="pokemon-holo-layer"></div>
               <div class="pokemon-glare-layer"></div>
-              
+
               <div class="pokemon-card-header">
                 <div class="pokemon-header-info">
                   <h3 class="pokemon-member-name">Renuka</h3>
@@ -513,7 +772,7 @@
             <div class="pokemon-card-inner">
               <div class="pokemon-holo-layer"></div>
               <div class="pokemon-glare-layer"></div>
-              
+
               <div class="pokemon-card-header">
                 <div class="pokemon-header-info">
                   <h3 class="pokemon-member-name">Sai Praveen</h3>
@@ -559,7 +818,7 @@
             <div class="pokemon-card-inner">
               <div class="pokemon-holo-layer"></div>
               <div class="pokemon-glare-layer"></div>
-              
+
               <div class="pokemon-card-header">
                 <div class="pokemon-header-info">
                   <h3 class="pokemon-member-name">Sandeep</h3>
@@ -605,7 +864,7 @@
             <div class="pokemon-card-inner">
               <div class="pokemon-holo-layer"></div>
               <div class="pokemon-glare-layer"></div>
-              
+
               <div class="pokemon-card-header">
                 <div class="pokemon-header-info">
                   <h3 class="pokemon-member-name">Venkata</h3>
@@ -651,7 +910,7 @@
             <div class="pokemon-card-inner">
               <div class="pokemon-holo-layer"></div>
               <div class="pokemon-glare-layer"></div>
-              
+
               <div class="pokemon-card-header">
                 <div class="pokemon-header-info">
                   <h3 class="pokemon-member-name">Sriram</h3>
@@ -701,9 +960,12 @@
     </div>
   </section>
 
-  <!-- CONTACT & SOCIAL SECTION -->
+  <!-- CONTACT & SOCIAL SECTION (API DISPATCH CONSOLE) -->
   <section class="contact-section" id="contact">
     <div class="container contact-container">
+      <div class="section-tag-badge">
+        <span class="syntax-comment">// 07. DISPATCH_SOCKET.io</span>
+      </div>
       <div class="contact-grid">
         <!-- Left Content -->
         <div class="contact-info">
@@ -711,15 +973,28 @@
             <img src="assets/logo.png" alt="Quantum Coders" class="contact-logo-image">
           </div>
 
-          <h2 class="contact-title">We’d love to hear from<br>you!</h2>
+          <h2 class="contact-title">&lt;Connect /&gt;<br><span class="highlight-cyan">dispatch_payload()</span></h2>
           <p class="contact-subtitle">
-            Connect with Quantum Coders to explore, innovate,<br>and grow.
+            <span class="terminal-log-prefix">&gt;</span> Connect with Quantum Coders to engineer, innovate, and deploy
+            next-gen systems.
           </p>
 
-          <button class="btn btn-primary" id="btn-get-in-touch">REGISTER NOW</button>
+          <!-- API Endpoint Spec Box -->
+          <div class="api-specs-box">
+            <div class="api-spec-row"><span class="spec-label">ENDPOINT:</span> <span class="spec-val">POST
+                /api/v1/quantum/register</span></div>
+            <div class="api-spec-row"><span class="spec-label">SECURITY:</span> <span class="spec-val">TLS_v1.3 [256-bit
+                AES]</span></div>
+            <div class="api-spec-row"><span class="spec-label">PROTOCOL:</span> <span class="spec-val text-green"><span
+                  class="pulse-dot"></span> LISTENING_ON_PORT_8080</span></div>
+          </div>
+
+          <button class="btn btn-primary btn-cyber" id="btn-get-in-touch">
+            <span class="terminal-symbol">$</span> ./register-now --exec
+          </button>
 
           <div class="social-block">
-            <h4 class="social-title">GET SOCIAL</h4>
+            <h4 class="social-title">// SOCIAL_NODES</h4>
             <div class="social-icons">
               <!-- LinkedIn -->
               <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
@@ -735,8 +1010,6 @@
                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                 </svg>
               </a>
-              <!-- YouTube -->
-
               <!-- X (Twitter) -->
               <a href="https://x.com" target="_blank" rel="noopener" aria-label="X" class="social-icon">
                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -751,89 +1024,123 @@
                     d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
                 </svg>
               </a>
-
             </div>
           </div>
         </div>
 
-        <!-- Right Vector Illustration -->
-        <div class="contact-illustration">
-          <svg viewBox="0 0 500 450" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Dynamic loops matching page 7 -->
+        <!-- Right Vector Illustration / Cyber HUD Console -->
+        <div class="contact-illustration hud-frame">
+          <div class="hud-corner top-left"></div>
+          <div class="hud-corner top-right"></div>
+          <div class="hud-corner bottom-left"></div>
+          <div class="hud-corner bottom-right"></div>
+
+          <svg viewBox="0 0 500 450" fill="none" xmlns="http://www.w3.org/2000/svg" class="contact-cyber-svg">
+            <defs>
+              <linearGradient id="cyber-glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9" />
+                <stop offset="50%" stop-color="#818CF8" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#A855F7" stop-opacity="0.7" />
+              </linearGradient>
+            </defs>
+            <!-- Dynamic loops -->
             <path
               d="M 50 250 C 100 100, 350 100, 420 200 C 480 300, 380 400, 250 380 C 100 360, 80 200, 200 150 C 350 100, 450 250, 400 350"
-              stroke="#38BDF8" stroke-width="24" stroke-linecap="round" fill="none" />
-            <path d="M 80 220 C 120 120, 330 120, 390 200" stroke="#0284C7" stroke-width="12" stroke-linecap="round"
+              stroke="url(#cyber-glow-grad)" stroke-width="16" stroke-linecap="round" fill="none" />
+            <path d="M 80 220 C 120 120, 330 120, 390 200" stroke="#38BDF8" stroke-width="8" stroke-linecap="round"
               fill="none" />
 
             <!-- Gear wheel center -->
-            <circle cx="270" cy="240" r="55" fill="#FFFFFF" stroke="#0F2052" stroke-width="8" />
-            <circle cx="270" cy="240" r="35" stroke="#0F2052" stroke-width="6" stroke-dasharray="6 6" fill="none" />
+            <circle cx="270" cy="240" r="55" fill="#0D1527" stroke="#38BDF8" stroke-width="4" />
+            <circle cx="270" cy="240" r="35" stroke="#818CF8" stroke-width="4" stroke-dasharray="6 6" fill="none" />
 
             <!-- Microscope & Flask vectors -->
-            <rect x="90" y="165" width="25" height="40" rx="4" fill="#0F2052" />
-            <path d="M 80 210 L 125 210 M 102 210 L 102 240" stroke="#0F2052" stroke-width="6" />
+            <rect x="90" y="165" width="25" height="40" rx="4" fill="#38BDF8" />
+            <path d="M 80 210 L 125 210 M 102 210 L 102 240" stroke="#38BDF8" stroke-width="4" />
 
             <!-- Lightbulb icon top -->
-            <circle cx="330" cy="140" r="16" fill="#0F2052" />
-            <line x1="330" y1="156" x2="330" y2="168" stroke="#0F2052" stroke-width="6" />
+            <circle cx="330" cy="140" r="16" fill="#F59E0B" />
+            <line x1="330" y1="156" x2="330" y2="168" stroke="#F59E0B" stroke-width="4" />
 
             <!-- Small dots and scientific orbits -->
-            <circle cx="150" cy="310" r="12" fill="#0F2052" />
-            <circle cx="410" cy="180" r="10" fill="#0F2052" />
-            <line x1="80" y1="360" x2="450" y2="150" stroke="#0F2052" stroke-width="3" stroke-dasharray="4 8" />
+            <circle cx="150" cy="310" r="10" fill="#34D399" />
+            <circle cx="410" cy="180" r="8" fill="#A855F7" />
+            <line x1="80" y1="360" x2="450" y2="150" stroke="rgba(56, 189, 248, 0.4)" stroke-width="2"
+              stroke-dasharray="4 8" />
           </svg>
+
+          <div class="hud-telemetry">
+            <span class="hud-tag"><span class="hud-led"></span>SOCKET: READY</span>
+            <span class="hud-tag">STREAM: 60FPS</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (TERMINAL STATUS FOOTER) -->
   <footer class="site-footer">
     <div class="container footer-container">
-      <p class="copyright-text">&copy; 2026 QUANTUM CODERS . All rights reserved.</p>
+      <div class="footer-top-terminal">
+        <div class="footer-prompt">
+          <span class="terminal-prompt">$</span> git status --short
+        </div>
+        <div class="footer-branch-tag">
+          <span class="git-branch-icon">⎇</span> branch: <strong>main</strong> <span class="commit-pill">[commit:
+            #7fa9c1]</span>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <p class="copyright-text">&copy; 2026 QUANTUM CODERS. All rights reserved. <span class="footer-env">[ENV:
+            PRODUCTION]</span></p>
+        <div class="footer-sys-health">
+          <span class="health-dot"></span>
+          <span class="health-text">ALL_SYSTEMS_OPERATIONAL</span>
+        </div>
+      </div>
     </div>
   </footer>
-
-  <!-- FLOATING CHAT / ASSISTANT WIDGET -->
-  <!-- Chat Popover Window -->
 
   <!-- TOAST NOTIFICATION CONTAINER -->
   <div class="toast-container" id="toast-container"></div>
 
   <!-- MODAL DIALOGS -->
-  <!-- 1. Event Details Modal -->
-
-
-  <!-- 2. Contact Form Modal -->
+  <!-- 1. Contact Form Modal (Terminal IDE Modal) -->
   <div class="modal" id="modal-contact" aria-hidden="true">
     <div class="modal-backdrop"></div>
-    <div class="modal-content">
-      <button class="modal-close" data-close-modal>&times;</button>
-      <div class="modal-header">
-        <h3>For Registrations </h3>
+    <div class="modal-content ide-modal">
+      <div class="modal-ide-titlebar">
+        <div class="ide-dots">
+          <span class="ide-dot dot-red"></span>
+          <span class="ide-dot dot-yellow"></span>
+          <span class="ide-dot dot-green"></span>
+        </div>
+        <span class="ide-modal-title">register_inquiry.ts</span>
+        <button class="modal-close" data-close-modal>&times;</button>
       </div>
       <div class="modal-body">
         <form id="contact-form-element" class="modal-form">
           <div class="form-group">
-            <label for="contact-name">Full Name</label>
-            <input type="text" id="contact-name" class="form-control" placeholder="Enter your name" required>
+            <label for="contact-name"><span class="input-prompt">&gt;</span> Full Name</label>
+            <input type="text" id="contact-name" class="form-control" placeholder="const name = 'Your Name'" required>
           </div>
           <div class="form-group">
-            <label for="contact-email">Email Address</label>
-            <input type="email" id="contact-email" class="form-control" placeholder="name@masc.edu.in" required>
+            <label for="contact-email"><span class="input-prompt">&gt;</span> Email Address</label>
+            <input type="email" id="contact-email" class="form-control" placeholder="user@masc.edu.in" required>
           </div>
           <div class="form-group">
-            <label for="contact-mobile">Mobile Number</label>
-            <input type="email" id="contact-email" class="form-control" placeholder="+91 9876543210" required>
+            <label for="contact-mobile"><span class="input-prompt">&gt;</span> Mobile Number</label>
+            <input type="tel" id="contact-mobile" class="form-control" placeholder="+91 9876543210" required>
           </div>
 
           <div class="form-group">
-            <label for="contact-message">Your Message</label>
+            <label for="contact-message"><span class="input-prompt">&gt;</span> Payload / Message</label>
             <textarea id="contact-message" class="form-control" rows="4"
-              placeholder="Tell us how can we improve the club together   " required></textarea>
+              placeholder="// Tell us how we can build together..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">Submit Inquiry</button>
+          <button type="submit" class="btn btn-primary btn-full btn-cyber">
+            <span class="terminal-symbol">$</span> dispatch_payload() [TRANSMIT]
+          </button>
         </form>
       </div>
     </div>
