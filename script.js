@@ -167,14 +167,144 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------------------------------------------------------
-  // 5. Team Section - Explore Achievements Button
+  // 5. Team Section - Pokémon Cards 3D Tilt & Upload System
   // ------------------------------------------------------------------------
+  const pokemonCards = document.querySelectorAll('.pokemon-card');
   const btnExploreAchievements = document.getElementById('btn-explore-achievements');
+
+  // Interactive 3D Card Tilt & Hologram Flare
+  pokemonCards.forEach(card => {
+    const holo = card.querySelector('.pokemon-holo-layer');
+    const glare = card.querySelector('.pokemon-glare-layer');
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Subtle dynamic 3D tilt
+      const rotateX = ((y - centerY) / centerY) * -12;
+      const rotateY = ((x - centerX) / centerX) * 12;
+
+      card.style.transform = `perspective(1000px) translateY(-68px) scale(1.15) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+
+      // Dynamic Holographic light tracking
+      if (holo) {
+        const percentX = (x / rect.width) * 100;
+        const percentY = (y / rect.height) * 100;
+        holo.style.backgroundPosition = `${percentX}% ${percentY}%`;
+      }
+      if (glare) {
+        glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.45) 0%, transparent 65%)`;
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      if (holo) holo.style.backgroundPosition = '';
+      if (glare) glare.style.background = '';
+    });
+
+    // Optional Quick Photo Upload for User Convenience
+    const placeholder = card.querySelector('.pokemon-placeholder-visual');
+    const cardImg = card.querySelector('.pokemon-card-img');
+    if (placeholder && cardImg) {
+      placeholder.style.cursor = 'pointer';
+      placeholder.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*';
+        fileInput.onchange = (uploadEvent) => {
+          const file = uploadEvent.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = (loadEvent) => {
+              cardImg.src = loadEvent.target.result;
+              showToast(`Uploaded photo for ${card.querySelector('.pokemon-member-name')?.textContent || 'team member'}!`);
+            };
+            reader.readAsDataURL(file);
+          }
+        };
+        fileInput.click();
+      });
+    }
+  });
+
   if (btnExploreAchievements) {
     btnExploreAchievements.addEventListener('click', () => {
-      showToast('🏆 IEDC MASC bagged Best Campus Innovation Hub 2026!');
+      showToast('🏆 Quantum Coders: Winner of Best Campus Innovation Hub 2026!');
     });
   }
+
+  // ------------------------------------------------------------------------
+  // React Bits - CircularText Component Integration
+  // ------------------------------------------------------------------------
+  const circularTextElements = document.querySelectorAll('.circular-text');
+
+  circularTextElements.forEach(el => {
+    const text = el.getAttribute('data-text') || 'TEAM QC • ';
+    const spinDuration = parseFloat(el.getAttribute('data-speed')) || 20;
+    const onHover = el.getAttribute('data-hover') || 'speedUp';
+    const letters = Array.from(text);
+
+    el.innerHTML = '';
+    letters.forEach((letter, i) => {
+      const span = document.createElement('span');
+      const rotationDeg = (360 / letters.length) * i;
+      const factor = Math.PI / letters.length;
+      const x = factor * i;
+      const y = factor * i;
+      const transform = `rotateZ(${rotationDeg}deg) translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0)`;
+
+      span.textContent = letter;
+      span.style.transform = transform;
+      span.style.webkitTransform = transform;
+      el.appendChild(span);
+    });
+
+    let currentRotation = 0;
+    let baseSpeed = 360 / spinDuration; // deg/sec
+    let currentSpeed = baseSpeed;
+    let targetSpeed = baseSpeed;
+    let currentScale = 1;
+    let targetScale = 1;
+    let lastTime = performance.now();
+
+    function animate(now) {
+      const delta = (now - lastTime) / 1000;
+      lastTime = now;
+
+      // Smooth interpolation matching React Bits spring/tween transitions
+      currentSpeed += (targetSpeed - currentSpeed) * 0.12;
+      currentScale += (targetScale - currentScale) * 0.12;
+      currentRotation = (currentRotation + currentSpeed * delta) % 360;
+
+      el.style.transform = `rotate(${currentRotation.toFixed(2)}deg) scale(${currentScale.toFixed(3)})`;
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+
+    el.addEventListener('mouseenter', () => {
+      if (onHover === 'speedUp') {
+        targetSpeed = 360 / (spinDuration / 4);
+      } else if (onHover === 'slowDown') {
+        targetSpeed = 360 / (spinDuration * 2);
+      } else if (onHover === 'pause') {
+        targetSpeed = 0;
+      } else if (onHover === 'goBonkers') {
+        targetSpeed = 360 / (spinDuration / 20);
+        targetScale = 0.8;
+      }
+    });
+
+    el.addEventListener('mouseleave', () => {
+      targetSpeed = baseSpeed;
+      targetScale = 1;
+    });
+  });
 
   // ------------------------------------------------------------------------
   // 6. Contact Form & GET IN TOUCH Modal

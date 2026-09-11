@@ -16,6 +16,7 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 
 <body>
@@ -32,7 +33,7 @@
   <header class="site-header" id="site-header">
     <div class="container header-container">
       <a href="#home" class="brand-logo" aria-label="Quantum Coders Home">
-        <img src="/Users/sandy/CodingClub/Quantum Coders/assets/logo.jpeg" alt="TEAM QC" class="logo-image">
+        <img src="assets/logo.png" alt="Quantum Coders" class="logo-image">
       </a>
 
       <!-- Desktop Nav -->
@@ -195,11 +196,11 @@
 
           <div class="event-actions">
             <button class="btn btn-outline" id="btn-view-event-details">View Details</button>
-
           </div>
         </div>
         <!-- Event Poster Display -->
       </div>
+    </div>
   </section>
 
   <!-- HOW WE SUPPORT YOU SECTION -->
@@ -347,128 +348,356 @@
   </section>
 
   <!-- MEET THE TEAM SECTION -->
-  <!-- MEET THE TEAM SECTION -->
+  <!-- MEET THE TEAM SECTION (POKÉMON CARDS THEME) -->
   <section class="team-section" id="team">
     <div class="container team-container">
-      <h2 class="section-title text-center">Meet The Team</h2>
-      <p class="section-subtitle text-center">
-        The visionary leaders driving innovation, software development, and technological excellence at Quantum Coders.
-      </p>
-
-      <!-- Executive Leadership (Tier 1: President & Vice President) -->
-      <div class="team-top-row">
-        <!-- President -->
-        <div class="team-card leader-card president-card">
-          <div class="team-avatar-frame leader-frame gold-glow">
-            <div class="avatar-placeholder male-avatar">
-              <svg viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="40" r="22" fill="#0F2052" />
-                <path d="M 20 90 C 20 65, 80 65, 80 90" fill="#0F2052" />
-              </svg>
-            </div>
-
+      <div class="team-header-wrapper text-center">
+        <!-- React Bits CircularText Component -->
+        <div class="circular-text-container" aria-label="TEAM QC Circular Text Badge">
+          <div class="circular-text" data-text="TEAM QC • TEAM QC • TEAM QC • " data-speed="20" data-hover="speedUp"></div>
+          <div class="circular-text-center-icon">
+            <img src="assets/logo.png" alt="TEAM QC" class="circular-center-logo">
           </div>
-          <h3 class="team-name">SAI PRAVEEN CHALAMASETTI</h3>
-          <div class="role-pill pill-gold">PRESIDENT</div>
-          <p class="team-org-tag">The Quantum Coders</p>
         </div>
+        <span class="badge-accent">COLLECTIBLE ROSTER</span>
+        <h2 class="section-title">Meet The Team</h2>
+        <p class="section-subtitle">
+          The visionary leaders driving innovation, software development, and technological excellence at Quantum Coders.
+        </p>
+      </div>
 
-        <!-- Vice President -->
-        <div class="team-card leader-card vp-card">
-          <div class="team-avatar-frame leader-frame cyan-glow">
-            <div class="avatar-placeholder female-avatar">
-              <svg viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="40" r="22" fill="#BE185D" />
-                <path d="M 20 90 C 20 65, 80 65, 80 90" fill="#BE185D" />
-              </svg>
+      <!-- Pokémon Interactive Card Showcase Deck -->
+      <div class="pokemon-deck-wrapper">
+        <div class="pokemon-deck" id="pokemon-deck">
+          
+          <!-- 1. Media PR (Karthik Chada) -->
+          <div class="pokemon-card theme-indigo" data-index="0" data-card="karthik-chada">
+            <div class="pokemon-card-inner">
+              <div class="pokemon-holo-layer"></div>
+              <div class="pokemon-glare-layer"></div>
+              
+              <div class="pokemon-card-header">
+                <div class="pokemon-header-info">
+                  <h3 class="pokemon-member-name">Karthik</h3>
+                  <p class="pokemon-member-role">Media &amp; PR</p>
+                </div>
+                <div class="pokemon-pill-badge">
+                  <span>Media PR</span>
+                  <span class="pill-arrow-icon">↗</span>
+                </div>
+              </div>
+
+              <div class="pokemon-artwork-stage">
+                <!-- Empty img tag ready for upload -->
+                <img class="pokemon-card-img" src="" alt="Karthik Chada" id="team-img-karthik">
+                <div class="pokemon-placeholder-visual">
+                  <div class="pokemon-avatar-glyph">
+                    <svg viewBox="0 0 100 100" fill="none" class="avatar-svg">
+                      <circle cx="50" cy="40" r="22" fill="rgba(255,255,255,0.9)" />
+                      <path d="M 22 88 C 22 64, 78 64, 78 88" fill="rgba(255,255,255,0.9)" />
+                    </svg>
+                  </div>
+                  <div class="pokemon-energy-badge">
+                    <span class="energy-icon">💫</span>
+                    <span class="energy-type">Brand &amp; Media</span>
+                  </div>
+                  <span class="upload-hint">Upload Photo</span>
+                </div>
+              </div>
+
+              <div class="pokemon-card-footer">
+                <div class="pokemon-type-tag">
+                  <span class="type-dot"></span>
+                  <span class="type-text">MEDIA &amp; PR</span>
+                </div>
+                <div class="pokemon-full-name">KARTHIK CHADA</div>
+                <div class="pokemon-club-brand">THE QUANTUM CODERS</div>
+              </div>
             </div>
-
           </div>
-          <h3 class="team-name">RENUKA</h3>
-          <div class="role-pill pill-cyan">VICE PRESIDENT</div>
-          <p class="team-org-tag">The Quantum Coders</p>
+
+          <!-- 2. Treasurer (Teja Jetti) -->
+          <div class="pokemon-card theme-amber" data-index="1" data-card="teja-jetti">
+            <div class="pokemon-card-inner">
+              <div class="pokemon-holo-layer"></div>
+              <div class="pokemon-glare-layer"></div>
+              
+              <div class="pokemon-card-header">
+                <div class="pokemon-header-info">
+                  <h3 class="pokemon-member-name">Teja Jetti</h3>
+                  <p class="pokemon-member-role">Treasurer</p>
+                </div>
+                <div class="pokemon-pill-badge">
+                  <span>Treasurer</span>
+                  <span class="pill-arrow-icon">↗</span>
+                </div>
+              </div>
+
+              <div class="pokemon-artwork-stage">
+                <!-- Empty img tag ready for upload -->
+                <img class="pokemon-card-img" src="" alt="Teja Jetti" id="team-img-teja">
+                <div class="pokemon-placeholder-visual">
+                  <div class="pokemon-avatar-glyph">
+                    <svg viewBox="0 0 100 100" fill="none" class="avatar-svg">
+                      <circle cx="50" cy="40" r="22" fill="rgba(255,255,255,0.9)" />
+                      <path d="M 22 88 C 22 64, 78 64, 78 88" fill="rgba(255,255,255,0.9)" />
+                    </svg>
+                  </div>
+                  <div class="pokemon-energy-badge">
+                    <span class="energy-icon">⭐</span>
+                    <span class="energy-type">Finance Lead</span>
+                  </div>
+                  <span class="upload-hint">Upload Photo</span>
+                </div>
+              </div>
+
+              <div class="pokemon-card-footer">
+                <div class="pokemon-type-tag">
+                  <span class="type-dot"></span>
+                  <span class="type-text">TREASURER</span>
+                </div>
+                <div class="pokemon-full-name">TEJA JETTI</div>
+                <div class="pokemon-club-brand">THE QUANTUM CODERS</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Vice President (Renuka) -->
+          <div class="pokemon-card theme-coral" data-index="2" data-card="renuka">
+            <div class="pokemon-card-inner">
+              <div class="pokemon-holo-layer"></div>
+              <div class="pokemon-glare-layer"></div>
+              
+              <div class="pokemon-card-header">
+                <div class="pokemon-header-info">
+                  <h3 class="pokemon-member-name">Renuka</h3>
+                  <p class="pokemon-member-role">Vice President</p>
+                </div>
+                <div class="pokemon-pill-badge">
+                  <span>Vice President</span>
+                  <span class="pill-arrow-icon">↗</span>
+                </div>
+              </div>
+
+              <div class="pokemon-artwork-stage">
+                <!-- Empty img tag ready for upload -->
+                <img class="pokemon-card-img" src="" alt="Renuka" id="team-img-renuka">
+                <div class="pokemon-placeholder-visual">
+                  <div class="pokemon-avatar-glyph">
+                    <svg viewBox="0 0 100 100" fill="none" class="avatar-svg">
+                      <circle cx="50" cy="40" r="22" fill="rgba(255,255,255,0.9)" />
+                      <path d="M 22 88 C 22 64, 78 64, 78 88" fill="rgba(255,255,255,0.9)" />
+                    </svg>
+                  </div>
+                  <div class="pokemon-energy-badge">
+                    <span class="energy-icon">🔥</span>
+                    <span class="energy-type">Operations Lead</span>
+                  </div>
+                  <span class="upload-hint">Upload Photo</span>
+                </div>
+              </div>
+
+              <div class="pokemon-card-footer">
+                <div class="pokemon-type-tag">
+                  <span class="type-dot"></span>
+                  <span class="type-text">VICE PRESIDENT</span>
+                </div>
+                <div class="pokemon-full-name">RENUKA</div>
+                <div class="pokemon-club-brand">THE QUANTUM CODERS</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. President (Sai Praveen Chalamasetti) -->
+          <div class="pokemon-card theme-cyan" data-index="3" data-card="sai-praveen">
+            <div class="pokemon-card-inner">
+              <div class="pokemon-holo-layer"></div>
+              <div class="pokemon-glare-layer"></div>
+              
+              <div class="pokemon-card-header">
+                <div class="pokemon-header-info">
+                  <h3 class="pokemon-member-name">Sai Praveen</h3>
+                  <p class="pokemon-member-role">President &amp; Lead</p>
+                </div>
+                <div class="pokemon-pill-badge">
+                  <span>President</span>
+                  <span class="pill-arrow-icon">↗</span>
+                </div>
+              </div>
+
+              <div class="pokemon-artwork-stage">
+                <!-- Empty img tag ready for upload -->
+                <img class="pokemon-card-img" src="" alt="Sai Praveen Chalamasetti" id="team-img-sai-praveen">
+                <div class="pokemon-placeholder-visual">
+                  <div class="pokemon-avatar-glyph">
+                    <svg viewBox="0 0 100 100" fill="none" class="avatar-svg">
+                      <circle cx="50" cy="40" r="22" fill="rgba(255,255,255,0.9)" />
+                      <path d="M 22 88 C 22 64, 78 64, 78 88" fill="rgba(255,255,255,0.9)" />
+                    </svg>
+                  </div>
+                  <div class="pokemon-energy-badge">
+                    <span class="energy-icon">⚡</span>
+                    <span class="energy-type">Quantum Lead</span>
+                  </div>
+                  <span class="upload-hint">Upload Photo</span>
+                </div>
+              </div>
+
+              <div class="pokemon-card-footer">
+                <div class="pokemon-type-tag">
+                  <span class="type-dot"></span>
+                  <span class="type-text">PRESIDENT</span>
+                </div>
+                <div class="pokemon-full-name">SAI PRAVEEN CHALAMASETTI</div>
+                <div class="pokemon-club-brand">THE QUANTUM CODERS</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Secretary (Sandeep Manchinasetti) -->
+          <div class="pokemon-card theme-purple" data-index="4" data-card="sandeep">
+            <div class="pokemon-card-inner">
+              <div class="pokemon-holo-layer"></div>
+              <div class="pokemon-glare-layer"></div>
+              
+              <div class="pokemon-card-header">
+                <div class="pokemon-header-info">
+                  <h3 class="pokemon-member-name">Sandeep</h3>
+                  <p class="pokemon-member-role">Secretary &amp; Core</p>
+                </div>
+                <div class="pokemon-pill-badge">
+                  <span>Secretary</span>
+                  <span class="pill-arrow-icon">↗</span>
+                </div>
+              </div>
+
+              <div class="pokemon-artwork-stage">
+                <!-- Empty img tag ready for upload -->
+                <img class="pokemon-card-img" src="" alt="Sandeep Manchinasetti" id="team-img-sandeep">
+                <div class="pokemon-placeholder-visual">
+                  <div class="pokemon-avatar-glyph">
+                    <svg viewBox="0 0 100 100" fill="none" class="avatar-svg">
+                      <circle cx="50" cy="40" r="22" fill="rgba(255,255,255,0.9)" />
+                      <path d="M 22 88 C 22 64, 78 64, 78 88" fill="rgba(255,255,255,0.9)" />
+                    </svg>
+                  </div>
+                  <div class="pokemon-energy-badge">
+                    <span class="energy-icon">🔮</span>
+                    <span class="energy-type">Core Strategy</span>
+                  </div>
+                  <span class="upload-hint">Upload Photo</span>
+                </div>
+              </div>
+
+              <div class="pokemon-card-footer">
+                <div class="pokemon-type-tag">
+                  <span class="type-dot"></span>
+                  <span class="type-text">SECRETARY</span>
+                </div>
+                <div class="pokemon-full-name">SANDEEP MANCHINASETTI</div>
+                <div class="pokemon-club-brand">THE QUANTUM CODERS</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Vice Secretary (Venkata Srinivas) -->
+          <div class="pokemon-card theme-green" data-index="5" data-card="venkata-srinivas">
+            <div class="pokemon-card-inner">
+              <div class="pokemon-holo-layer"></div>
+              <div class="pokemon-glare-layer"></div>
+              
+              <div class="pokemon-card-header">
+                <div class="pokemon-header-info">
+                  <h3 class="pokemon-member-name">Venkata</h3>
+                  <p class="pokemon-member-role">Vice Secretary</p>
+                </div>
+                <div class="pokemon-pill-badge">
+                  <span>Vice Sec</span>
+                  <span class="pill-arrow-icon">↗</span>
+                </div>
+              </div>
+
+              <div class="pokemon-artwork-stage">
+                <!-- Empty img tag ready for upload -->
+                <img class="pokemon-card-img" src="" alt="Venkata Srinivas" id="team-img-venkata">
+                <div class="pokemon-placeholder-visual">
+                  <div class="pokemon-avatar-glyph">
+                    <svg viewBox="0 0 100 100" fill="none" class="avatar-svg">
+                      <circle cx="50" cy="40" r="22" fill="rgba(255,255,255,0.9)" />
+                      <path d="M 22 88 C 22 64, 78 64, 78 88" fill="rgba(255,255,255,0.9)" />
+                    </svg>
+                  </div>
+                  <div class="pokemon-energy-badge">
+                    <span class="energy-icon">🍃</span>
+                    <span class="energy-type">Coordination</span>
+                  </div>
+                  <span class="upload-hint">Upload Photo</span>
+                </div>
+              </div>
+
+              <div class="pokemon-card-footer">
+                <div class="pokemon-type-tag">
+                  <span class="type-dot"></span>
+                  <span class="type-text">VICE SECRETARY</span>
+                </div>
+                <div class="pokemon-full-name">VENKATA SRINIVAS</div>
+                <div class="pokemon-club-brand">THE QUANTUM CODERS</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Media PR (Sriram Sudagani) -->
+          <div class="pokemon-card theme-ruby" data-index="6" data-card="sriram-sudagani">
+            <div class="pokemon-card-inner">
+              <div class="pokemon-holo-layer"></div>
+              <div class="pokemon-glare-layer"></div>
+              
+              <div class="pokemon-card-header">
+                <div class="pokemon-header-info">
+                  <h3 class="pokemon-member-name">Sriram</h3>
+                  <p class="pokemon-member-role">Media &amp; PR</p>
+                </div>
+                <div class="pokemon-pill-badge">
+                  <span>Media PR</span>
+                  <span class="pill-arrow-icon">↗</span>
+                </div>
+              </div>
+
+              <div class="pokemon-artwork-stage">
+                <!-- Empty img tag ready for upload -->
+                <img class="pokemon-card-img" src="" alt="Sriram Sudagani" id="team-img-sriram">
+                <div class="pokemon-placeholder-visual">
+                  <div class="pokemon-avatar-glyph">
+                    <svg viewBox="0 0 100 100" fill="none" class="avatar-svg">
+                      <circle cx="50" cy="40" r="22" fill="rgba(255,255,255,0.9)" />
+                      <path d="M 22 88 C 22 64, 78 64, 78 88" fill="rgba(255,255,255,0.9)" />
+                    </svg>
+                  </div>
+                  <div class="pokemon-energy-badge">
+                    <span class="energy-icon">💥</span>
+                    <span class="energy-type">Outreach Lead</span>
+                  </div>
+                  <span class="upload-hint">Upload Photo</span>
+                </div>
+              </div>
+
+              <div class="pokemon-card-footer">
+                <div class="pokemon-type-tag">
+                  <span class="type-dot"></span>
+                  <span class="type-text">MEDIA &amp; PR</span>
+                </div>
+                <div class="pokemon-full-name">SRIRAM SUDAGANI</div>
+                <div class="pokemon-club-brand">THE QUANTUM CODERS</div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Core Officers Grid (Tier 2: Secretary, Joint Secretary, Treasurer) -->
-      <div class="team-officers-grid">
-        <!-- Secretary -->
-        <div class="team-card officer-card">
-          <div class="team-avatar-frame officer-frame">
-            <div class="avatar-placeholder male-avatar">
-              <svg viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="40" r="22" fill="#2563EB" />
-                <path d="M 20 90 C 20 65, 80 65, 80 90" fill="#2563EB" />
-              </svg>
-            </div>
-          </div>
-          <h4 class="team-name">SANDEEP MANCHINASETTI</h4>
-          <div class="role-pill pill-blue">SECRETARY</div>
-          <p class="team-org-tag">The Quantum Coders</p>
-        </div>
-
-        <!-- Joint Secretary -->
-        <div class="team-card officer-card">
-          <div class="team-avatar-frame officer-frame">
-            <div class="avatar-placeholder male-avatar">
-              <svg viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="40" r="22" fill="#0284C7" />
-                <path d="M 20 90 C 20 65, 80 65, 80 90" fill="#0284C7" />
-              </svg>
-            </div>
-          </div>
-          <h4 class="team-name">VENKATA SRINIVAS</h4>
-          <div class="role-pill pill-sky">JOINT SECRETARY</div>
-          <p class="team-org-tag">The Quantum Coders</p>
-        </div>
-
-        <!-- Treasurer -->
-        <div class="team-card officer-card">
-          <div class="team-avatar-frame officer-frame">
-            <div class="avatar-placeholder male-avatar">
-              <svg viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="40" r="22" fill="#4338CA" />
-                <path d="M 20 90 C 20 65, 80 65, 80 90" fill="#4338CA" />
-              </svg>
-            </div>
-          </div>
-          <h4 class="team-name">TEJA JETTI</h4>
-          <div class="role-pill pill-indigo">TREASURER</div>
-          <p class="team-org-tag">The Quantum Coders</p>
-        </div>
+      <div class="team-actions">
+        <button class="btn btn-navy-pill" id="btn-explore-achievements">Explore Achievements &rarr;</button>
       </div>
-      <div class="team-card officer-card">
-        <div class="team-avatar-frame officer-frame">
-          <div class="avatar-placeholder male-avatar">
-            <svg viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="40" r="22" fill="#4338CA" />
-              <path d="M 20 90 C 20 65, 80 65, 80 90" fill="#4338CA" />
-            </svg>
-          </div>
-        </div>
-        <h4 class="team-name">KARTHIK CHADA</h4>
-        <div class="role-pill pill-indigo">MEDIA AND PR</div>
-        <p class="team-org-tag">The Quantum Coders</p>
-      </div>
-    </div>
-    <div class="team-card officer-card">
-      <div class="team-avatar-frame officer-frame">
-        <div class="avatar-placeholder male-avatar">
-          <svg viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="40" r="22" fill="#4338CA" />
-            <path d="M 20 90 C 20 65, 80 65, 80 90" fill="#4338CA" />
-          </svg>
-        </div>
-      </div>
-      <h4 class="team-name">SRIRAM SUDAGANI</h4>
-      <div class="role-pill pill-indigo">PR</div>
-      <p class="team-org-tag">The Quantum Coders</p>
-    </div>
-    </div>
-
-    <div class="team-actions">
-      <button class="btn btn-navy-pill" id="btn-explore-achievements">Explore Achievements &rarr;</button>
-    </div>
     </div>
   </section>
 
@@ -479,17 +708,7 @@
         <!-- Left Content -->
         <div class="contact-info">
           <div class="contact-logo">
-            <svg width="120" height="40" viewBox="0 0 160 55" fill="none">
-              <path d="M12 10H20V45H12V10Z" fill="#0F2052" />
-              <text x="5" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="28"
-                fill="#0F2052">i</text>
-              <path d="M22 14H38C45 14 50 19 50 27.5C50 36 45 41 38 41H22V14Z" stroke="#0F2052" stroke-width="6"
-                fill="none" />
-              <path d="M68 14C60 14 54 20 54 27.5C54 35 60 41 68 41C74 41 78 38 80 34" stroke="#0F2052" stroke-width="6"
-                fill="none" />
-              <text x="14" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="9"
-                fill="#0F2052" letter-spacing="4">TEAM QC </text>
-            </svg>
+            <img src="assets/logo.png" alt="Quantum Coders" class="contact-logo-image">
           </div>
 
           <h2 class="contact-title">We’d love to hear from<br>you!</h2>
@@ -577,11 +796,7 @@
   </footer>
 
   <!-- FLOATING CHAT / ASSISTANT WIDGET -->
-
-
   <!-- Chat Popover Window -->
-
-  </div>
 
   <!-- TOAST NOTIFICATION CONTAINER -->
   <div class="toast-container" id="toast-container"></div>
