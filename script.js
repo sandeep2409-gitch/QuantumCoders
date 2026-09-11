@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navCreateId) {
     navCreateId.addEventListener('click', (e) => {
       e.preventDefault();
-      showToast('Redirecting to IEDC Student Registration Portal...');
+      showToast('Redirecting to  Student Registration Portal...');
       openModal('modal-contact');
     });
   }
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navDownloads) {
     navDownloads.addEventListener('click', (e) => {
       e.preventDefault();
-      showToast('Downloading IEDC MASC Prospectus & Resource Manual...');
+      showToast('Downloading Quantum Coders Club poster...');
     });
   }
 
