@@ -78,6 +78,8 @@ html {
   font-size: 16px;
   background-color: var(--bg-dark-base);
   color-scheme: dark;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -2637,41 +2639,351 @@ button {
 /* --------------------------------------------------------------------------
    14. Responsive Breakpoints
    -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   14. Responsive Breakpoints & UI Stability
+   -------------------------------------------------------------------------- */
+@keyframes mobileNavSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 992px) {
-  .hero-title { font-size: 3rem; }
-  .about-grid { grid-template-columns: 1fr; }
-  .events-grid { grid-template-columns: 1fr; }
-  .support-cards-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery-grid { grid-template-columns: 1fr 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
+  .hero-title {
+    font-size: 2.85rem;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .support-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .hamburger-btn { display: flex; }
+  .hamburger-btn {
+    display: flex;
+  }
   
   .main-nav {
     position: absolute;
-    top: 80px;
+    top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(6, 10, 23, 0.96);
+    background: rgba(6, 10, 23, 0.98);
     backdrop-filter: blur(20px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
     border-bottom: 1px solid rgba(56, 189, 248, 0.25);
     display: none;
-    padding: 1.75rem 0;
+    padding: 1.25rem 0;
+    z-index: 1001;
+    animation: mobileNavSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
-  .main-nav.active { display: block; }
+  .main-nav.active {
+    display: block;
+  }
   
   .nav-list {
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 0.5rem;
     padding: 0 1.5rem;
     align-items: flex-start;
   }
 
-  .hero-title { font-size: 2.4rem; }
-  .support-cards-grid { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: 1fr; }
+  .nav-link {
+    width: 100%;
+    padding: 0.65rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Hero Adjustments */
+  .hero-section {
+    padding: 5rem 0 3.5rem 0;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5.8vw, 2.5rem);
+    min-height: 175px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-code-badge {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .btn-code-cta {
+    padding: 0.85rem 1.6rem;
+    font-size: 0.9rem;
+  }
+
+  /* About IDE Editor */
+  .about-section {
+    padding: 4.5rem 0;
+  }
+
+  .ide-body {
+    padding: 1.6rem 1.15rem;
+  }
+
+  .about-grid {
+    gap: 2rem;
+  }
+
+  .hud-telemetry {
+    display: none;
+  }
+
+  /* Support & Gallery Grids */
+  .support-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  /* Modals */
+  .modal-content {
+    width: 94%;
+    max-width: 95vw;
+    padding: 1.5rem 1rem;
+  }
+
+  .modal-content.ide-modal .modal-body {
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Header */
+  .header-container {
+    height: 68px;
+  }
+
+  .logo-image {
+    height: 38px;
+    max-width: 140px;
+  }
+
+  .brand-logo {
+    padding: 5px 10px;
+  }
+
+  /* IDE Window */
+  .ide-status-bar-mini {
+    display: none;
+  }
+
+  .ide-titlebar {
+    padding: 0.6rem 0.85rem;
+  }
+
+  .ide-tabs {
+    gap: 2px;
+  }
+
+  .ide-tab {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  /* Events CLI Flag Bar */
+  .events-cli-bar {
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .cli-flag {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  /* Terminal Event Cards */
+  .terminal-card-body {
+    padding: 1.25rem 1rem;
+  }
+
+  .event-title {
+    font-size: 1.4rem;
+  }
+
+  .terminal-card-header {
+    padding: 0.65rem 0.9rem;
+  }
+
+  .terminal-card-name {
+    font-size: 0.72rem;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    padding: 4rem 0;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .api-spec-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .contact-card.terminal-card .terminal-card-body {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Footer */
+  .footer-top-terminal,
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Section Headings */
+  .section-title {
+    font-size: clamp(1.6rem, 7.5vw, 2rem) !important;
+  }
+
+  .section-tag-badge .syntax-comment {
+    font-size: 0.76rem;
+  }
+
+  /* Hero Section Typewriter */
+  .hero-title {
+    font-size: clamp(1.75rem, 7vw, 2.15rem);
+    line-height: 1.2;
+    min-height: 155px;
+  }
+
+  /* Circular Badge */
+  .circular-text-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .circular-text {
+    width: 150px;
+    height: 150px;
+  }
+
+  .circular-text span {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .circular-text-center-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .circular-center-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Pokémon 7-Card Hand Spread - Strict Zero Horizontal Scroll */
+  .pokemon-deck-wrapper {
+    padding: 1.25rem 0 2rem 0;
+    overflow: visible;
+  }
+
+  .pokemon-deck {
+    min-height: 285px;
+    padding: 1rem 0 2rem 0;
+  }
+
+  .pokemon-card {
+    flex: 0 0 clamp(80px, 20.5vw, 102px);
+    width: clamp(80px, 20.5vw, 102px);
+    height: clamp(160px, 39vw, 205px);
+    margin: 0 clamp(-48px, -11vw, -28px);
+    border-radius: 14px;
+  }
+
+  .pokemon-card-inner {
+    border-radius: 14px;
+    padding: 0.45rem 0.35rem;
+  }
+
+  .pokemon-member-name {
+    font-size: 0.72rem;
+  }
+
+  .pokemon-member-role {
+    font-size: 0.52rem;
+  }
+
+  .pokemon-pill-badge {
+    padding: 0.12rem 0.3rem;
+    font-size: 0.52rem;
+  }
+
+  .pill-arrow-icon {
+    width: 13px;
+    height: 13px;
+    font-size: 0.5rem;
+  }
+
+  .avatar-svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .pokemon-full-name {
+    font-size: 0.62rem;
+  }
+
+  .pokemon-type-tag,
+  .pokemon-club-brand {
+    font-size: 0.48rem;
+  }
+
+  .type-dot {
+    width: 4px;
+    height: 4px;
+  }
+
+  .pokemon-energy-badge {
+    padding: 0.1rem 0.3rem;
+    font-size: 0.52rem;
+  }
+
+  .pokemon-card:hover {
+    transform: translateY(-24px) scale(1.18) rotate(0deg) !important;
+  }
 }
